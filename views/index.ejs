@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redis</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      }
+
+      body {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        justify-content: center;
+        align-items: center;
+      }
+      #Routes
+      {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        gap:12px;
+        padding: 22px;
+      }
+
+      #Routes a
+      {
+        background: transparent;
+        font-weight: 600;
+        font-size: 18px;
+        outline: none;
+        border:none;
+        width: fit-content;
+        text-decoration: none;
+      }
+
+      #Routes a:hover
+      {
+        color:rgb(101, 101, 237)
+      }
+
+    </style>
+  </head>
+  <body>
+    <h1>Welcome Home</h1>
+    <p>It is an basic api with redis used for chaching</p>
+    <div id="Routes">
+        <h1>Routes</h1>
+        <a href="/books">Books</a>
+        <a href="/cart">Cart</a>
+    </div>
+  </body>
+</html>
