@@ -4,13 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Redis</title>
-    <link rel="stylesheet" href="style.css" />
     <style>
       * {
         box-sizing: border-box;
         margin: 0;
         padding: 0;
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
       }
 
       body {
@@ -22,42 +22,99 @@
         justify-content: center;
         align-items: center;
       }
-      #Routes
-      {
+      #Routes {
         display: flex;
         flex-direction: row;
         width: 100%;
         height: 100%;
-        gap:12px;
+        gap: 12px;
         padding: 22px;
         justify-content: center;
         align-items: center;
       }
 
-      #Routes a
-      {
+      #Routes a {
         background: transparent;
         font-weight: 600;
         font-size: 18px;
         outline: none;
-        border:none;
+        border: none;
         width: fit-content;
         text-decoration: none;
       }
 
-      #Routes a:hover
-      {
-        color:rgb(101, 101, 237)
+      #Routes a:hover {
+        color: rgb(101, 101, 237);
+      }
+      .submit {
+        padding: 6px 12px;
+        border-radius: 4px;
+        font-size: 16px;
+        color: white;
+        background-color: rgb(72, 114, 193);
+        font-weight: 600;
+        border: none;
+        outline: none;
+      }
+      .submit:hover {
+        background-color: rgb(94, 140, 226);
+        box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.1);
+      }
+      .submit:active {
+        background-color: rgb(72, 114, 193);
+        box-shadow: none;
       }
 
+      .book-container {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        justify-content: center;
+        align-items: center;
+        padding-top: 22px;
+        width: 100%;
+      }
+      .book-container-2 {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        width: 80%;
+        justify-content: center;
+        align-items: center;
+        padding:12px 6px;
+        border:1px solid black;
+        border-radius: 4px;
+      }
+      .book-card {
+        display: flex;
+        flex-direction: row;
+        gap: 12px;
+      }
+      .book-card p {
+        border: 1px solid black;
+        border-radius: 2px;
+        font-weight: 600;
+        padding: 4px 12px;
+      }
     </style>
   </head>
   <body>
     <h1>Welcome Cart</h1>
     <p>It is an basic api with redis used for chaching</p>
     <div id="Routes">
-        <a href="/">Home</a>
-        <a href="/books">Books</a>
+      <a href="/">Home</a>
+      <a href="/books">Books</a>
+    </div>
+    <div class="book-container-2">
+      <h2>Cart</h2>
+      <div class="book-container">
+        <% carts.forEach((item)=>{ %>
+        <div class="book-card">
+          <p><%= item.name %></p>
+          <p><%= item.quantity %></p>
+        </div>
+        <% }) %>
+      </div>
     </div>
   </body>
 </html>
